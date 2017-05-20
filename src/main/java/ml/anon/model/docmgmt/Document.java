@@ -1,55 +1,43 @@
 package ml.anon.model.docmgmt;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
+import ml.anon.model.anonymization.Anonymization;
+import org.springframework.data.annotation.Id;
+
+import java.util.List;
 
 /**
  * Representation of a document.
  *
  * @author mirco
- *
  */
-@Entity
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@org.springframework.data.mongodb.core.mapping.Document(collection = "documents")
 public class Document {
 
-  private final static int MB_5 = 1024 * 1024 * 5;
+    private final static int MB_5 = 1024 * 1024 * 5;
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
+    @Id
+    private String id;
 
-  @Column(length = MB_5)
-  private String text;
 
-  @JsonIgnore
-  @Column(length = MB_5)
-  private byte[] file;
+    private String text;
 
-  public String getText() {
-    return text;
-  }
+    @JsonIgnore
 
-  public void setText(String plainText) {
-    this.text = plainText;
-  }
+    private byte[] file;
 
-  public Long getId() {
-    return id;
-  }
+    @NonNull
 
-  public byte[] getFile() {
-    return file;
-  }
+    private List<String> tokenized;
+    @NonNull
 
-  public void setFile(byte[] originalFile) {
-    this.file = originalFile;
-  }
-
+    private List<Anonymization> anonymizations;
 
 
 }
