@@ -1,7 +1,9 @@
 package ml.anon.model.docmgmt;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.*;
+import ml.anon.docmgmt.HTMLViewSerializer;
 import ml.anon.model.anonymization.Anonymization;
 import org.springframework.data.annotation.Id;
 
@@ -28,15 +30,25 @@ public class Document {
 
     private String fileName;
 
-    private String text;
+    private List<String> text;
+
+    @NonNull
+    private FileType originalFileType;
+
+    @JsonSerialize(using = HTMLViewSerializer.class)
+    private String htmlView;
 
     @JsonIgnore
     private byte[] file;
 
     @NonNull
+    @JsonIgnore
     private List<String> chunks;
 
     private List<Anonymization> anonymizations;
 
 
+    public static enum FileType {
+        DOCX, PDF
+    }
 }
