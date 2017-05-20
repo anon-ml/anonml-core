@@ -17,6 +17,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @org.springframework.data.mongodb.core.mapping.Document(collection = "documents")
 public class Document {
 
@@ -25,17 +26,15 @@ public class Document {
     @Id
     private String id;
 
+    private String fileName;
 
     private String text;
 
     @JsonIgnore
-
     private byte[] file;
 
     @NonNull
-
-    private List<String> tokenized;
-    @NonNull
+    private List<String> chunks;
 
     private List<Anonymization> anonymizations;
 
