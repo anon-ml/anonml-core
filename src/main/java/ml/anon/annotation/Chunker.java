@@ -30,8 +30,6 @@ public class Chunker {
             jCas.setDocumentText(input);
             /* TODO improve with POS & Chunks */
             AnalysisEngineDescription tokenize = createEngineDescription(OpenNlpSegmenter.class, OpenNlpSegmenter.PARAM_LANGUAGE, "de");
-            //          AnalysisEngineDescription pos = createEngineDescription(OpenNlpPosTagger.class, OpenNlpPosTagger.PARAM_LANGUAGE, "de");
-            //         AnalysisEngineDescription chunk = createEngineDescription(TreeTaggerChunker.class, TreeTaggerChunker.PARAM_LANGUAGE, "de");
 
             SimplePipeline.runPipeline(jCas, tokenize);
 
