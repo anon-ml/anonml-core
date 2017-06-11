@@ -3,6 +3,7 @@ package ml.anon.model.docmgmt;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import ml.anon.model.anonymization.Anonymization;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.data.annotation.Id;
 
 import java.util.List;
@@ -42,6 +43,10 @@ public class Document {
     private List<String> chunks;
 
     private List<Anonymization> anonymizations;
+
+    public String fileNameAs(String extension) {
+        return FilenameUtils.removeExtension(fileName) + "." + extension;
+    }
 
 
 }
