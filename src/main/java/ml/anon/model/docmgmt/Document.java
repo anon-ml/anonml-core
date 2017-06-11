@@ -18,6 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 @org.springframework.data.mongodb.core.mapping.Document(collection = "documents")
 public class Document {
 
@@ -32,6 +33,7 @@ public class Document {
 
     @NonNull
     private FileType originalFileType;
+
 
     @JsonIgnore
     private byte[] file;
