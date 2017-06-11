@@ -1,6 +1,7 @@
 package ml.anon.model.docmgmt;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.common.base.Joiner;
 import lombok.*;
 import ml.anon.model.anonymization.Anonymization;
 import org.apache.commons.io.FilenameUtils;
@@ -46,6 +47,10 @@ public class Document {
 
     public String fileNameAs(String extension) {
         return FilenameUtils.removeExtension(fileName) + "." + extension;
+    }
+
+    public String fullText() {
+        return Joiner.on("").join(text);
     }
 
 
