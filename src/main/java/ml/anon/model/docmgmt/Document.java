@@ -40,7 +40,6 @@ public class Document {
     @JsonIgnore
     private byte[] file;
 
-    @JsonIgnore
     private List<String> chunks;
 
     private List<Anonymization> anonymizations;
