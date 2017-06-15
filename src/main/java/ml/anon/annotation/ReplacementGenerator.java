@@ -8,6 +8,7 @@ import ml.anon.model.anonymization.Label;
 public class ReplacementGenerator {
 
     public String generateReplacement(String original, Label label) {
-        return "##############";
+
+        return original.replaceAll(".", "#");
     }
 }
