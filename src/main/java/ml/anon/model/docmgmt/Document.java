@@ -32,6 +32,8 @@ public class Document {
 
     private List<String> text;
 
+    private String displayableText;
+
     private String fullText;
 
     @NonNull
