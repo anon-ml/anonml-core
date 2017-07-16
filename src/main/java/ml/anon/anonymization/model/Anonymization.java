@@ -1,4 +1,4 @@
-package ml.anon.model.anonymization;
+package ml.anon.anonymization.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;

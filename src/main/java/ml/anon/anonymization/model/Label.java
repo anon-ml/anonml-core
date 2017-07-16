@@ -1,4 +1,4 @@
-package ml.anon.model.anonymization;
+package ml.anon.anonymization.model;
 
 import java.util.Arrays;
 import java.util.List;

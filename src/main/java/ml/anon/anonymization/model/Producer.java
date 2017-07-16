@@ -1,4 +1,4 @@
-package ml.anon.model.anonymization;
+package ml.anon.anonymization.model;
 
 /**
  * Created by mirco on 20.05.17.
