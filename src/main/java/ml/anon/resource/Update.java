@@ -5,6 +5,6 @@ package ml.anon.resource;
  */
 public interface Update<T> {
 
-  T update(T instance);
+  T update(String id, T instance);
 
 }
