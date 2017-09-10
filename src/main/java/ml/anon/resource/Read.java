@@ -1,6 +1,7 @@
 package ml.anon.resource;
 
 import java.util.List;
+
 import ml.anon.exception.BadRequestException;
 
 /**
@@ -8,8 +9,6 @@ import ml.anon.exception.BadRequestException;
  */
 public interface Read<T> {
 
-  T findById(String id) throws BadRequestException;
-
-  List<T> findAll() throws BadRequestException;
+    T findById(String id) throws BadRequestException;
 
 }
