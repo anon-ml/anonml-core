@@ -20,4 +20,5 @@ public class Anonymization {
   private long id;
   private Replacement data;
   private Producer producer;
+  private Status status;
 }
