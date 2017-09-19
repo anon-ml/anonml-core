@@ -4,5 +4,5 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.LOCKED)
-public class LockedException extends RuntimeException {
+public class OutdatedException extends RuntimeException {
 }
